@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+        }
+
+    }
+    dependencies {
+        classpath "org.jetbrains.intellij.plugins:gradle-intellij-plugin:0.2.0-SNAPSHOT"
+    }
+}
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+group 'MaplePlugin'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+intellij {
+    version 'IC-2016.1'
+    plugins 'coverage'
+    pluginName 'MaplePlugin'
+
+    publish {
+        username 'uj.java'
+        password 'password'
+        channel 'default_channel'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
