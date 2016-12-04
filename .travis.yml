@@ -1,1 +1,6 @@
 language: java
+
+before_install:
+  - ls -l
+  - chmod +x gradlew
+  - ls -l
