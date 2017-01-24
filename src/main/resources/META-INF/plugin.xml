@@ -23,6 +23,7 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
+        <configurationType implementation="DemoRunConfigurationType"/>
     </extensions>
 
     <application-components>
