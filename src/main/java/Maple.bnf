@@ -1,0 +1,27 @@
+{
+  parserClass="generated.parser.MapleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Maple"
+  psiImplClassSuffix="Impl"
+  psiPackage="generated.psi"
+  psiImplPackage="generated.psi.impl"
+
+  elementTypeHolderClass="generated.psi.MapleTypes"
+  elementTypeClass="generated.psi.MapleElementType"
+  tokenTypeClass="generated.psi.MapleTokenType"
+
+  psiImplUtilClass="generated.psi.impl.MaplePsiImplUtil"
+}
+simpleFile ::= (property|COMMENT)*
+
+property ::= (KEY SEPARATOR VALUE?)|KEY {
+    pin=3
+    recoverWhile="recover_property"
+    mixin="psi.impl.MapleNamedElementImpl"
+    implements="psi.MapleNamedElement"
+    methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)

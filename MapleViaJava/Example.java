@@ -13,5 +13,6 @@ public class Example {
         System.out.println(m.evaluate("a:=2;"));
         System.out.println(m.evaluate("b:=3;"));
         System.out.println(n.evaluate("c:=a+b;"));
+        int a;
     }
 }
