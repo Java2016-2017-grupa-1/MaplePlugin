@@ -23,7 +23,7 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <configurationType implementation="DemoRunConfigurationType"/>
+        <configurationType implementation="run.configuration.MaplePlugin_RunConfigurationType"/>
     </extensions>
 
     <application-components>

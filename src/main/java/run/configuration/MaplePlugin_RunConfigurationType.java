@@ -1,21 +1,18 @@
+package run.configuration;
 import com.intellij.execution.configurations.*;
 import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
-
 import javax.swing.*;
 
-/**
- * @author Anna Bulenkova
- */
-public class DemoRunConfigurationType implements ConfigurationType {
+public class MaplePlugin_RunConfigurationType implements ConfigurationType {
     @Override
     public String getDisplayName() {
-        return "Demo";
+        return "MaplePlugin";
     }
 
     @Override
     public String getConfigurationTypeDescription() {
-        return "Demo Run Configuration Type";
+        return "MaplePlugin Run Configuration Type";
     }
 
     @Override
@@ -26,11 +23,11 @@ public class DemoRunConfigurationType implements ConfigurationType {
     @NotNull
     @Override
     public String getId() {
-        return "DEMO_RUN_CONFIGURATION";
+        return "MaplePlugin_RUN_CONFIGURATION";
     }
 
     @Override
     public ConfigurationFactory[] getConfigurationFactories() {
-        return new ConfigurationFactory[]{new DemoConfigurationFactory(this)};
+        return new ConfigurationFactory[]{new MaplePlugin_ConfigurationFactory(this)};
     }
 }
